@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2024 Kencove
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <!-- Add "Add a Card" smart button on Partner Form -->
+    <record model="ir.ui.view" id="view_partner_form_add_card_button">
+        <field name="name">res.partner.form.add.card.button</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('oe_button_box')]" position="inside">
+                <button
+                    name="action_add_card_via_profile"
+                    type="object"
+                    string="Add a Card"
+                    class="oe_stat_button"
+                    icon="fa-credit-card"
+                    help="Add a payment card via direct Customer Profile creation (no $0.01 validation charge)"
+                >
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>
